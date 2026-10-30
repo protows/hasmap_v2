@@ -7,7 +7,7 @@ public class Hash2 {
     // В качестве ключа будет имя клиента.
     // В качестве значения — количество заказов от этого клиента.
     private Map<String, Integer> orders = new HashMap<>();
-    int ordersCount =1;
+  
 
 
     public static void main(String[] args) {
