@@ -30,12 +30,8 @@ public class Hash2 {
     private void newOrder(String clientName) {
         // Сохраните новый заказ в хеш-таблицу. При обновлении счётчика заказов
         // не забудьте учесть заказы, которые уже были сделаны ранее.
-        if(!orders.containsKey(clientName)){
-            orders.put(clientName, ordersCount);
-        }else{
-            orders.put(clientName,ordersCount++);
-        }
-        //orders.putIfAbsent(clientName,ordersCount++);
+        int current = orders.getOrDefault(clientName, 0);
+            orders.put(clientName, current + 1);
     }
 
     private void printStatistics() {
