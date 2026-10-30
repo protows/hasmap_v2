@@ -7,7 +7,7 @@ public class Hash2 {
     // В качестве ключа будет имя клиента.
     // В качестве значения — количество заказов от этого клиента.
     private Map<String, Integer> orders = new HashMap<>();
-    int ordersCount =0;
+    int ordersCount =1;
 
 
     public static void main(String[] args) {
@@ -31,9 +31,11 @@ public class Hash2 {
         // Сохраните новый заказ в хеш-таблицу. При обновлении счётчика заказов
         // не забудьте учесть заказы, которые уже были сделаны ранее.
         if(!orders.containsKey(clientName)){
-            orders.put(clientName, ordersCount++);
+            orders.put(clientName, ordersCount);
+        }else{
+            orders.put(clientName,ordersCount++);
         }
-        orders.putIfAbsent(clientName,ordersCount++);
+        //orders.putIfAbsent(clientName,ordersCount++);
     }
 
     private void printStatistics() {
